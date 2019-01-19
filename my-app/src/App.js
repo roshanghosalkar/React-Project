@@ -7,6 +7,7 @@ import Header from './component/headercomponent/header.js' ;
 import Footer from './component/footer/footer.js';
 import About from './component/Pages/about';
 import Contact from './component/Pages/contact';
+import Homepage from './component/Pages/homepage';
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
       <Router>     
          <div className="App">
         <Header />
-     
+     <Route exact path ='/' component={Homepage} />        
      <Route exact path ='/about' component={About} />
      <Route exact path ='/contact' component={Contact} />
 {/* <About />

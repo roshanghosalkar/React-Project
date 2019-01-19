@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
+import Nav from '../headercomponent/nav'; 
 
 class Footer extends Component {
   render() {
     return (
       <footer>
-            vskjvbskvhbsvhkd<br/>
-            hfhfdh<br/>
-            bksbvk<br/>
-            svsn<br/>
-
+           <h2>This is footer</h2>
+           <Nav />
       </footer>
     );
   }
