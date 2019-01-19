@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+//import {Link} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 
 import Nav from './nav';
 
@@ -9,7 +12,8 @@ class Header extends Component {
     return (
       <div>
         <header>
-            <div class="logo">LOGO</div>
+            
+            <Button bsStyle="info">click me </Button>
             <Nav />
       </header>          
      
