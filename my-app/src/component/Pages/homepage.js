@@ -2,6 +2,26 @@ import React, { Component } from 'react';
 import ReactDOM from "react-dom";
 
 class Homepage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: ""
+    };
+  }
+  changeText(event) {
+    this.setState({
+      name: event.target.value
+    });
+  }
+    reset=()=>{
+      this.refs.someName.value = '';
+      
+
+      
+    }
+
+
   showAlert() {
     alert("Im an alert");
   }
@@ -13,9 +33,16 @@ class Homepage extends Component {
     Open modal
   </button>
   <br></br>
-  <button onClick={this.showAlert}>show alert</button>;
-
-
+  <button onClick={this.showAlert}>show alert</button>
+<br></br><br></br>
+<label htmlFor="name">Enter Text For Modal </label>
+        <textarea type="text" id="name" col="5" row="20" ref="someName" onChange={this.changeText.bind(this)} />
+       
+<br></br>
+<br></br>
+<button onClick={this.reset}>Reset</button>
+<br></br>
+<br></br>
   <div className="modal" id="myModal">
     <div className="modal-dialog">
       <div className="modal-content">
@@ -28,8 +55,9 @@ class Homepage extends Component {
         
        
         <div className="modal-body">
-          Modal body..
-        </div>
+        <h3 ref="someName1">{this.state.name}</h3> 
+        <button onClick={this.reset.bind(this)}>Reset</button>
+               </div>
         
         
         <div className="modal-footer">

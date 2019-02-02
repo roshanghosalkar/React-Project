@@ -48,7 +48,7 @@ class Navigation extends Component {
                 <DropdownToggle nav caret>
                   Options
                 </DropdownToggle>
-                <DropdownMenu left>
+                <DropdownMenu >
                   <DropdownItem>
                   <Link to="/about">About</Link>
                   </DropdownItem>
