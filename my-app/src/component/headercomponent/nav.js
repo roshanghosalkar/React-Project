@@ -1,59 +1,75 @@
-import React, { Component } from 'react';
+import React,{Component} from 'react';
+
 import {Link} from 'react-router-dom';
 import logo from '../../../src/img/react-logo.png';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  //NavbarBrand,
+  Nav,
+  NavItem,
+ // NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
-class Nav extends Component {
+class Navigation extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
-      <nav className="navbar navbar-inverse navbar-fixed-top">
-      <div className="container">
-      <div className="navbar-header">
-          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
+      <div>
+
+        <Navbar  className="navbar navbar-expand-sm bg-secondary navbar-dark" light>
           <Link to=""><img src={logo} alt="Logo" width="50" /></Link>
-        </div>
-
-        <div id="navbar" className="navbar-collapse collapse">
-          <ul className="nav navbar-nav">
-          
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-            <li className="dropdown">
-              <Link to="#"  className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></Link>
-              <ul className="dropdown-menu">
-                <li><Link to="#">Action</Link></li>
-                <li><Link to="#">Another action</Link></li>
-                <li><Link to="#">Something else here</Link></li>
-                <li role="separator" className="divider"></li>
-                <li className="dropdown-header">Nav header</li>
-                <li><Link to="#">Separated link</Link></li>
-                <li><Link to="#">One more separated link</Link></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-           
-            </div>
-       </nav>         
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav navbar>
+              <NavItem>
+              <Link to="/about">About</Link>
+              </NavItem>
+              <NavItem>
+              <Link to="/contact">Contact</Link>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu left>
+                  <DropdownItem>
+                  <Link to="/about">About</Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                  <Link to="/contact">Contact</Link>
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+              <NavItem>
+              <Link to="/contact">Contact</Link>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
     );
   }
 }
 
-export default Nav;
+export default Navigation;

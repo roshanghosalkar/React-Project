@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 //import {Link} from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+//import { Button } from 'react-bootstrap';
 
 
-import Nav from './nav';
+import Navigation from './nav';
 
 
 class Header extends Component {
@@ -13,8 +13,8 @@ class Header extends Component {
       <div>
         <header>
             
-            <Button bsStyle="info">click me </Button>
-            <Nav />
+            
+            <Navigation />
       </header>          
      
       </div>
