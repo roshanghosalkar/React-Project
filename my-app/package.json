@@ -5,6 +5,7 @@
   "dependencies": {
     "gulp": "^4.0.0",
     "react": "^16.7.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.7.0",
     "react-dropdown": "^1.6.4",
