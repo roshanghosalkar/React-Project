@@ -18,7 +18,16 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-   
+   <script>
+     plugins: [
+    // other plugins,
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+    }),
+],
+     </script>
     
     <title>React App</title>
   </head>
