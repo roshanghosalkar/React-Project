@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import img1 from '../../../src/img/img1.jpg';
+import img2 from '../../../src/img/img2.jpg';
+import img3 from '../../../src/img/img3.jpg';
 
 class Homepage extends Component {
 
@@ -29,6 +35,24 @@ class Homepage extends Component {
   render() {
     return (
       <div>
+  <OwlCarousel
+    className="owl-theme"
+    loop
+    margin={10}
+    nav
+    items={1}
+
+>
+    <div class="item"><img src={img1} alt="img1" /></div>
+    <div class="item"><img src={img2} alt="img1" /></div>
+    <div class="item"><img src={img3} alt="img1" /></div>
+   
+</OwlCarousel>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Open modal
   </button>
@@ -67,6 +91,7 @@ class Homepage extends Component {
       </div>
     </div>
   </div>
+
 
        </div>         
     );
