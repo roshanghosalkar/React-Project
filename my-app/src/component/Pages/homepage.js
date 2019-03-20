@@ -41,13 +41,17 @@ class Homepage extends Component {
     margin={10}
     nav
     items={1}
-
->
+    dots={false}
+    autoplay={true}
+    >
     <div class="item"><img src={img1} alt="img1" /></div>
     <div class="item"><img src={img2} alt="img1" /></div>
     <div class="item"><img src={img3} alt="img1" /></div>
    
 </OwlCarousel>
+
+
+
 
 <br></br>
 <br></br>
