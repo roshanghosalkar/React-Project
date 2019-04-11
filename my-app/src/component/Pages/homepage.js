@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
-import OwlCarousel from 'react-owl-carousel';
+//import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import img1 from '../../../src/img/img1.jpg';
-import img2 from '../../../src/img/img2.jpg';
-import img3 from '../../../src/img/img3.jpg';
+//import img1 from '../../../src/img/img1.jpg';
+//import img2 from '../../../src/img/img2.jpg';
+//import img3 from '../../../src/img/img3.jpg';
+// import Draggable from 'react-draggable';
+//import { render } from "react-dom";
+import { Rnd } from "react-rnd";
 
 class Homepage extends Component {
+
+
 
   constructor(props) {
     super(props);
@@ -31,11 +36,12 @@ class Homepage extends Component {
   showAlert() {
     alert("Im an alert");
   }
+  
 
   render() {
     return (
       <div>
-  <OwlCarousel
+  {/* <OwlCarousel
     className="owl-theme"
     loop
     margin={10}
@@ -48,18 +54,37 @@ class Homepage extends Component {
     <div class="item"><img src={img2} alt="img1" /></div>
     <div class="item"><img src={img3} alt="img1" /></div>
    
-</OwlCarousel>
+</OwlCarousel> */}
 
 
-
+<br></br><br></br>
 
 <br></br>
 <br></br>
+<div className="Roshan">
+{/* <Draggable>
+  <div>I can now be moved around!</div>
+</Draggable> */}
+
+
+<Rnd
+  default={{
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 80
+  }}
+  className={'abc'}
+  bounds={'.Roshan'}
+  lockAspectRatio={'3/4'}
+>
+  Drag Mi
+</Rnd>
+
+</div>
+{/* <br></br>
 <br></br>
-<br></br>
-<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Open modal
-  </button>
+<button type="button" className="btn btn-info" data-toggle="modal" data-target="#myModal"></button>
   <br></br>
   <button onClick={this.showAlert}>show alert</button>
 <br></br><br></br>
@@ -94,7 +119,7 @@ class Homepage extends Component {
         
       </div>
     </div>
-  </div>
+  </div> */}
 
 
        </div>         

@@ -9,14 +9,33 @@ import Footer from './component/footer/footer.js';
 import About from './component/Pages/about';
 import Contact from './component/Pages/contact';
 import Homepage from './component/Pages/homepage';
-import CKEditor from '@ckeditor/ckeditor5-react';
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+
+
+// import CKEditor from '@ckeditor/ckeditor5-react';
+// import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+ import { EditorState } from 'draft-js';
+ import { Editor } from 'react-draft-wysiwyg';
+ import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 //import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editorState: EditorState.createEmpty(),
+    };
+  }
+
+  onEditorStateChange: Function = (editorState) => {
+    this.setState({
+      editorState,
+    });
+  };
+  
   render() {
+     const { editorState } = this.state;
     return (
       <Router>     
          <div className="App">
@@ -24,7 +43,7 @@ class App extends Component {
      <Route exact path ='/' component={Homepage} />        
      <Route exact path ='/about' component={About} />
      <Route exact path ='/contact' component={Contact} />
-     <CKEditor
+     {/* <CKEditor
                     onInit={ editor => {
                         console.log( 'Editor is ready to use!', editor );
 
@@ -38,7 +57,16 @@ class App extends Component {
                     editor={ DecoupledEditor }
                     data="<p>Hello from CKEditor 5's DecoupledEditor!</p>"
                     //config={ }
-                />
+                /> */}
+ <Editor
+        initialEditorState={editorState}
+        wrapperClassName="demo-wrapper"
+        editorClassName="demo-editor"
+        toolbar={{
+          options:['inline',  'list', 'colorPicker','fontSize','fontFamily'],
+        }}
+      /> 
+
 
 
         <Footer />
@@ -48,5 +76,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
