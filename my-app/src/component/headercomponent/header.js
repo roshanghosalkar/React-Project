@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../../../src/img/react-logo.png';
-
-
-
-
-
-
-
-
-
 import Navigation from './nav';
 
 
