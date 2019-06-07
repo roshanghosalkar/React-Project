@@ -9,33 +9,33 @@ import Footer from './component/footer/footer.js';
 import About from './component/Pages/about';
 import Contact from './component/Pages/contact';
 import Homepage from './component/Pages/homepage';
+// import CKEditor from 'ckeditor4-react';
 
-
-// import CKEditor from '@ckeditor/ckeditor5-react';
+ //import CKEditor from '@ckeditor/ckeditor5-react';
 // import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
- import { EditorState } from 'draft-js';
- import { Editor } from 'react-draft-wysiwyg';
- import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+// import { EditorState } from 'draft-js';
+// import { Editor } from 'react-draft-wysiwyg';
+// import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-//import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
+// import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editorState: EditorState.createEmpty(),
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     editorState: EditorState.createEmpty(),
+  //   };
+  // }
 
-  onEditorStateChange: Function = (editorState) => {
-    this.setState({
-      editorState,
-    });
-  };
+  // onEditorStateChange: Function = (editorState) => {
+  //   this.setState({
+  //     editorState,
+  //   });
+  // };
   
   render() {
-     const { editorState } = this.state;
+   //  const { editorState } = this.state;
     return (
       <Router>     
          <div className="App">
@@ -58,15 +58,17 @@ class App extends Component {
                     data="<p>Hello from CKEditor 5's DecoupledEditor!</p>"
                     //config={ }
                 /> */}
- <Editor
+ {/* <Editor
         initialEditorState={editorState}
         wrapperClassName="demo-wrapper"
         editorClassName="demo-editor"
         toolbar={{
           options:['inline',  'list', 'colorPicker','fontSize','fontFamily'],
         }}
-      /> 
-
+      />  */}
+{/* <CKEditor
+                    data="<p>Hello from CKEditor 4!</p>"
+                /> */}
 
 
         <Footer />

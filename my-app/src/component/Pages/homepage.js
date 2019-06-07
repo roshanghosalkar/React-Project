@@ -8,18 +8,33 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 //import img3 from '../../../src/img/img3.jpg';
 // import Draggable from 'react-draggable';
 //import { render } from "react-dom";
+ import { EditorState } from 'draft-js';
+ import { Editor } from 'react-draft-wysiwyg';
+ import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import { Rnd } from "react-rnd";
 
 class Homepage extends Component {
-
-
-
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      editorState: EditorState.createEmpty(),
     };
   }
+
+  onEditorStateChange: Function = (editorState) => {
+    this.setState({
+      editorState,
+    });
+  };
+  
+
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: ""
+  //   };
+  // }
   changeText(event) {
     this.setState({
       name: event.target.value
@@ -39,6 +54,7 @@ class Homepage extends Component {
   
 
   render() {
+    const { editorState } = this.state;
     return (
       <div>
   {/* <OwlCarousel
@@ -71,18 +87,26 @@ class Homepage extends Component {
   default={{
     x: 0,
     y: 0,
-    width: 100,
-    height: 80
+    width: 300,
+    height: 200
   }}
   className={'abc'}
   bounds={'.Roshan'}
   lockAspectRatio={'3/4'}
+  dragHandleClassName={'rdw-editor-toolbar'}
 >
-  Drag Mi
+<Editor
+        initialEditorState={editorState}
+        wrapperClassName="demo-wrapper"
+        editorClassName="demo-editor"
+        toolbar={{
+          options:['inline',  'list', 'colorPicker','fontSize','fontFamily'],
+        }}
+      /> 
 </Rnd>
 
 </div>
-{/* <br></br>
+ <br></br>
 <br></br>
 <button type="button" className="btn btn-info" data-toggle="modal" data-target="#myModal"></button>
   <br></br>
@@ -119,7 +143,7 @@ class Homepage extends Component {
         
       </div>
     </div>
-  </div> */}
+  </div> 
 
 
        </div>         
